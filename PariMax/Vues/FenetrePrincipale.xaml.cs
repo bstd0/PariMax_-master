@@ -17,11 +17,26 @@ namespace PariMax.Vues
     /// <summary>
     /// Logique d'interaction pour FenetrePrincipale.xaml
     /// </summary>
-    public partial class FenetrePrincipale : Window
+    public partial class FenetrePrincipale
     {
         public FenetrePrincipale()
         {
             InitializeComponent();
+        }
+
+        private void BtnCls_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new PageClassement();
+        }
+
+        private void BtnUti_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new PageUtilisateur();
+        }
+
+        private void BtnPari_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new PagePari();
         }
     }
 }

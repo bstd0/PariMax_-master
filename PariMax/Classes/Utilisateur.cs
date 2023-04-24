@@ -16,6 +16,7 @@ namespace PariMax.Classes
         private bool isJoueur;
         private int point;
         private Promotion promotion;
+        private List<Utilisateur> utilisateur;
 
         public Utilisateur(string pseudo, bool mdp, string nom, string prenom, bool isJoueur, int point)
         {
@@ -35,5 +36,6 @@ namespace PariMax.Classes
         public bool IsJoueur { get => isJoueur; set => isJoueur = value; }
         public int Point { get => point; set => point = value; }
         public Promotion Promotion { get => promotion; set => promotion = value; }
+        public List<Utilisateur> Users { get => utilisateur; set => utilisateur = value; }
     }
 }

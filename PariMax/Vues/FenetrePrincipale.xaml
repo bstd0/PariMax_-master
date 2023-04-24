@@ -1,18 +1,52 @@
-﻿<Window x:Class="PariMax.Vues.FenetrePrincipale"
+﻿<mah:MetroWindow x:Class="PariMax.Vues.FenetrePrincipale"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:PariMax.Vues"
         mc:Ignorable="d"
-        Title="FenetrePrincipale" Height="450" Width="800">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Vues/PariMaxHomepage.png"/>
-        </Grid.Background>
-        <Button Content="CLASSEMENT" HorizontalAlignment="Left" Height="50" Margin="544,372,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="UTILISATEURS" HorizontalAlignment="Center" Height="50" Margin="0,372,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
-        <Button Content="PARI" HorizontalAlignment="Left" Height="50" Margin="54,372,0,0" VerticalAlignment="Top" Width="200"/>
+        Height="472"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        Title="FenetrePrincipale">
 
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="BtnCls" Click="BtnCls_Click" ToolTip="Classement"  Background="Blue">
+                <iconPacks:PackIconModern Width="22"
+                                      Height="22"
+                                      Kind="Billboard"
+                                      Foreground="White"
+                                     />
+            </Button>
+            <Button x:Name="BtnUti" Click="BtnUti_Click" ToolTip="Utilisateurs" Background="White">
+                <iconPacks:PackIconModern Width="22"
+                                      Height="22"
+                                      Kind="User"
+                                      Foreground="black"/>
+                
+            </Button>
+            <Button x:Name="BtnPari" Click="BtnPari_Click" ToolTip="Pari" Background="Red">
+                <iconPacks:PackIconModern Width="22"
+                                      Height="22"
+                                      Kind="ListCreate" 
+                                      Foreground="White"/>
+                
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    
+    <Grid Margin="0,0,0,0" Height="472">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Ressources/PariMaxHomepage.png"/>
+        </Grid.Background>
     </Grid>
-</Window>
+</mah:MetroWindow>
