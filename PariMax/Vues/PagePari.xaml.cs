@@ -26,21 +26,6 @@ namespace PariMax.Vues
             InitializeComponent();
         }
 
-        private void tbx_Equipe1_SelectionChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tbx_Equipe2_SelectionChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tbx_DateHeure_SelectionChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void DtG_Maths_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -56,15 +41,15 @@ namespace PariMax.Vues
             {
                 tbx_NomEquipe.Text = Convert.ToString((DtG_Maths.SelectedItem as Pari).Libelle);
                 Tbx_Date.Text = Convert.ToString((DtG_Maths.SelectedItem as Pari).DteFin);
-
             }
         }
 
         private void Btn_Crea_Click(object sender, RoutedEventArgs e)
         {
-            Grid_Creation.IsEnabled = true;
+            Grid_Modif.IsEnabled = false;
             Grid_Creation.Visibility = Visibility.Visible;
-            Grid_Modif.Opacity = 0.5;   
+            Grid_Modif.Opacity = 0.5;
+            Grid_Creation.IsEnabled = true;
         }
 
         private void btn_Cancelled_Click(object sender, RoutedEventArgs e)

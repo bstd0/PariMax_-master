@@ -20,5 +20,27 @@ namespace PariMax.Modeles
         {
             database.Close();
         }
+
+        public static void insert()
+        {
+            open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO TableName (FirstColumn) VALUES (@1)");
+            cmd.Connection = database;
+            cmd.Parameters.Add(new SqlParameter("1", 10));
+            cmd.ExecuteNonQuery();
+
+            close();
+        }
+
+        private static void close()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void open()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
