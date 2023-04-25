@@ -8,42 +8,67 @@
       Title="PagePari" Height="450" Width="800">
     <Grid>
         <Grid x:Name="Grid_Modif" Visibility="Visible" Background="LightGray">
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="800"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="93" Margin="351,92,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="98" Margin="351,243,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="38" Margin="351,243,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="48" Margin="351,137,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="61" Margin="351,280,0,0" VerticalAlignment="Top" Width="155" Background="White"/>
-            <DataGrid x:Name="DtG_Maths"  HorizontalAlignment="Left" IsReadOnly="True" AutoGenerateColumns="False" Height="425" Margin="0,25,0,0" VerticalAlignment="Top" Width="226" SelectionChanged="DtG_Maths_SelectionChanged">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="2*" FontSize="18" Header="Matchs" Binding="{Binding Libelle}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Label Content="Equipe 1 et Equipe 2" HorizontalAlignment="Left" Height="26" Margin="357,106,0,0" VerticalAlignment="Top" Width="146" BorderBrush="Black" Background="White"/>
-            <TextBox x:Name="tbx_NomEquipe" HorizontalAlignment="Left" Height="34" Margin="357,144,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="{x:Null}" Foreground="Black"/>
-            <Label Content="Information du Match" HorizontalAlignment="Left" Height="26" Margin="358,249,0,0" VerticalAlignment="Top" Width="298" BorderBrush="Black" OpacityMask="Black" Background="#FFF9F7F7"/>
-            <Label Content="Date de fin" HorizontalAlignment="Left" Height="55" Margin="355,283,0,0" VerticalAlignment="Top" Width="148" BorderBrush="Black" Background="White"/>
-            <DatePicker x:Name="Tbx_Date" HorizontalAlignment="Left" Margin="511,286,0,0" VerticalAlignment="Top" Height="52" Width="145" DisplayDate="2023-01-01"/>
-            <Button x:Name="Btn_Valider" Content="Valider" HorizontalAlignment="Left" Margin="689,381,0,0" VerticalAlignment="Top" Height="22" Width="50" Click="Btn_Valider_Click" Background="#FFF8A602" Foreground="White" FontWeight="Bold" FontFamily="Trebuchet MS"/>
+
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="800">
+                <Button x:Name="btn_spec" Content="SPECIAUX" FontWeight="Bold" FontFamily="Trebuchet MS" Margin="197,-1,513,-1" Click="btn_spec_Click"/>
+            </Border>
             <Button x:Name="Btn_Crea" Content="Création" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top" Width="62" Click="Btn_Crea_Click" Background="#FF23B348" Foreground="White" FontWeight="Bold" FontFamily="Trebuchet MS"/>
             <Button x:Name="Btn_Supp" Content="Supprimer" HorizontalAlignment="Left" Margin="71,4,0,0" VerticalAlignment="Top" Width="73" Click="Btn_Supp_Click" Background="#FFF80202" Foreground="White" FontWeight="Bold" FontFamily="Trebuchet MS"/>
+            <Button x:Name="btn_class"  Visibility="Hidden" Content="CLASSIQUE" FontWeight="Bold" FontFamily="Trebuchet MS" Margin="199,0,513,425" Click="btn_class_Click"/>
+
+
+            <Grid x:Name="pari_classique" Visibility="Visible">
+                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="93" Margin="351,92,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="98" Margin="351,243,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="38" Margin="351,243,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="48" Margin="351,137,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="61" Margin="351,280,0,0" VerticalAlignment="Top" Width="155" Background="White"/>
+                <DataGrid x:Name="DtG_Maths"  HorizontalAlignment="Left" IsReadOnly="True" AutoGenerateColumns="False" Height="425" Margin="0,25,0,0" VerticalAlignment="Top" Width="226" SelectionChanged="DtG_Maths_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="2*" FontSize="18" Header="Matchs" Binding="{Binding Libelle}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="Equipe 1 et Equipe 2" HorizontalAlignment="Left" Height="26" Margin="357,106,0,0" VerticalAlignment="Top" Width="146" BorderBrush="Black" Background="White"/>
+                <TextBox x:Name="tbx_NomEquipe" HorizontalAlignment="Left" Height="34" Margin="357,144,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="{x:Null}" Foreground="Black"/>
+                <Label Content="Information du Match" HorizontalAlignment="Left" Height="26" Margin="358,249,0,0" VerticalAlignment="Top" Width="298" BorderBrush="Black" OpacityMask="Black" Background="#FFF9F7F7"/>
+                <Label Content="Date de fin" HorizontalAlignment="Left" Height="55" Margin="355,283,0,0" VerticalAlignment="Top" Width="148" BorderBrush="Black" Background="White"/>
+                <DatePicker x:Name="Tbx_Date" HorizontalAlignment="Left" Margin="511,286,0,0" VerticalAlignment="Top" Height="52" Width="145" DisplayDate="2023-01-01"/>
+                <Button x:Name="Btn_Valider" Content="Valider" HorizontalAlignment="Left" Margin="689,381,0,0" VerticalAlignment="Top" Height="22" Width="50" Click="Btn_Valider_Click" Background="#FFF8A602" Foreground="White" FontWeight="Bold" FontFamily="Trebuchet MS"/>
+                <TextBox x:Name="txtbox_ptposs" HorizontalAlignment="Left" Margin="511,194,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="85" Height="22"/>
+                <Label Content="Points possible :" HorizontalAlignment="Left" Margin="416,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.501"/>
+            </Grid>
+
+            <Grid x:Name="pari_speciaux" Margin="0,25,0,0" Visibility="Hidden">
+                <DataGrid x:Name="DtG_SPECIAUX"  HorizontalAlignment="Left" IsReadOnly="True" AutoGenerateColumns="False" Height="425" VerticalAlignment="Center" Width="226" SelectionChanged="DtG_Maths_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="2*" FontSize="18" Header="Matchs" Binding="{Binding Libelle}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
         </Grid>
+
+
         <Grid Name="Grid_Creation" Margin="116,74,116,74" Background="#FFECECEC"  Visibility="Hidden" IsEnabled="False">
-            <Border BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5" CornerRadius="5,5,5,5"/>
+            <Border BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5" CornerRadius="5,5,5,5">
+                <TextBox x:Name="txt_ptposs" TextWrapping="Wrap" Text=" " Margin="448,130,26,150"/>
+            </Border>
             <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="800"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="93" Margin="120,51,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="98" Margin="119,149,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="38" Margin="119,149,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="53" Margin="120,91,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="61" Margin="119,186,0,0" VerticalAlignment="Top" Width="155" Background="White"/>
-            <TextBox x:Name="tbx_Equipe1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Margin="124,94,0,0" Height="46"/>
-            <DatePicker x:Name="Tbx_DateC" HorizontalAlignment="Left" Margin="279,190,0,0" VerticalAlignment="Top" Height="52" Width="145" DisplayDate="2023-01-01"/>
-            <Label Content="Equipe1 et Equipe2" HorizontalAlignment="Left" Margin="120,60,0,0" VerticalAlignment="Top" Width="168"/>
-            <Label Content="Information du Match" HorizontalAlignment="Left" Height="26" Margin="123,156,0,0" VerticalAlignment="Top" Width="298" BorderBrush="Black" OpacityMask="Black" Background="#FFF9F7F7"/>
-            <Label Content="Date de fin" HorizontalAlignment="Left" Height="45" Margin="120,187,0,0" VerticalAlignment="Top" Width="149" BorderBrush="Black" Background="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="93" Margin="24,51,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="98" Margin="23,149,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="38" Margin="23,149,0,0" VerticalAlignment="Top" Width="311" Background="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="53" Margin="24,91,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="61" Margin="23,186,0,0" VerticalAlignment="Top" Width="155" Background="White"/>
+            <TextBox x:Name="tbx_Equipe1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Margin="28,94,0,0" Height="46"/>
+            <DatePicker x:Name="Tbx_DateC" HorizontalAlignment="Left" Margin="183,190,0,0" VerticalAlignment="Top" Height="52" Width="145" DisplayDate="2023-01-01"/>
+            <Label Content="Equipe1 et Equipe2" HorizontalAlignment="Left" Margin="24,60,0,0" VerticalAlignment="Top" Width="168"/>
+            <Label Content="Information du Match" HorizontalAlignment="Left" Height="26" Margin="27,156,0,0" VerticalAlignment="Top" Width="298" BorderBrush="Black" OpacityMask="Black" Background="#FFF9F7F7"/>
+            <Label Content="Date de fin" HorizontalAlignment="Left" Height="45" Margin="24,187,0,0" VerticalAlignment="Top" Width="149" BorderBrush="Black" Background="White"/>
             <Button x:Name="btn_Create" Content="Valider" HorizontalAlignment="Left" Margin="483,264,0,0" VerticalAlignment="Top" Height="28" Width="75" Background="#FF24B348" Foreground="Black" Click="btn_Create_Click"/>
             <Label Content="Création Matchs" HorizontalAlignment="Center" Margin="0,-3,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
             <Button x:Name="btn_Cancelled" Content="Annuler" HorizontalAlignment="Left" Margin="404,265,0,0" VerticalAlignment="Top" Height="27" Width="74" Background="#FFF8A602" Foreground="Black" Click="btn_Cancelled_Click"/>
+            <Label Content="Points possible :" HorizontalAlignment="Left" Margin="346,125,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="chk_elmine" Content="Elimanatoir" HorizontalAlignment="Left" Margin="463,193,0,0" VerticalAlignment="Top" Width="85"/>
         </Grid>
     </Grid>
 </Page>
