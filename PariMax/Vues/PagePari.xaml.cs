@@ -21,16 +21,20 @@ namespace PariMax.Vues
     /// </summary>
     public partial class PagePari : Page
     {
+        List<Pari> Liste = new List<Pari>();
         public PagePari()
         {
+            DateTime t = new DateTime(2023 / 09/ 12);
             InitializeComponent();
+            Pari a = new Pari("France vs Portugal", 10, t, "Gagné");
+            Pari b = new Pari("Pologne vs Allemagne", 20, t, "Gagné");
+            Liste.Add(a);
+            Liste.Add(b);
+            DtG_Maths.ItemsSource = Liste;
+            DtG_Maths.Items.Refresh();
         }
 
-        private void DtG_Maths_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+    
         private void Btn_Valider_Click(object sender, RoutedEventArgs e)
         {
             if (DtG_Maths.SelectedItem == null)
@@ -54,10 +58,10 @@ namespace PariMax.Vues
 
         private void btn_Cancelled_Click(object sender, RoutedEventArgs e)
         {
-            Grid_Creation.Visibility = Visibility.Hidden;
-            Grid_Creation.IsEnabled = false;
-            Grid_Creation.Opacity = 1;
             Grid_Modif.IsEnabled = true;
+            Grid_Creation.Visibility = Visibility.Hidden;
+            Grid_Modif.Opacity = 1;
+
         }
 
         private void btn_Create_Click(object sender, RoutedEventArgs e)
@@ -73,6 +77,20 @@ namespace PariMax.Vues
             Grid_Creation.IsEnabled = false;
             Grid_Modif.Opacity = 1;
             DtG_Maths.IsEnabled = true;
+        }
+
+        private void DtG_Maths_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Btn_Supp_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Êtes vous sûr ?", "Attention", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                DtG_Maths.Items.Refresh();
+            }
         }
     }
 }

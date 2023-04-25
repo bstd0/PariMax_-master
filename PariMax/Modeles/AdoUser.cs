@@ -1,4 +1,5 @@
-﻿using PariMax.Classes;
+﻿/*
+using PariMax.Classes;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -35,7 +36,7 @@ namespace PariMax.Modeles
                         classroom.AddUser(user);
                         users.Add(user);
                     }
-                }*/
+                }
                 Promotion p = PariMax.MainWindow.cl.Where(c => c.Id == id).First();
                 Utilisateur user = new Utilisateur(Convert.ToString(reader["name"]), Convert.ToString(reader["lastname"]), Convert.ToString(reader["username"]), Convert.ToString(reader["email"]), Convert.ToInt32(reader["isplayer"]));
                 if (reader["points"] != null || reader["points"] != DBNull.Value)
@@ -54,3 +55,4 @@ namespace PariMax.Modeles
 
     }
 }
+*/

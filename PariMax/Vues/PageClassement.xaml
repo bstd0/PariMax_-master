@@ -10,12 +10,12 @@
       Title="PageClassement">
 
     <Grid Background="White">
-        <DataGrid x:Name="DtGridCls" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="783" BorderBrush="White" Background="White" SelectionChanged="DtGridCls_SelectionChanged">
+        <DataGrid x:Name="list"  AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="783" BorderBrush="White" Background="White" SelectionChanged="list_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="2*" Header="Position" Binding="{Binding Position}"/>
                 <DataGridTextColumn Width="2*" Header="Point" Binding="{Binding Point}"/>
-                <DataGridTextColumn Width="2*" Header="Nom" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Width="2*" Header="Pseudo" Binding="{Binding Pseudo}"/>
                 <DataGridTextColumn Width="2*" Header="Prénom" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Width="2*" Header="Nom" Binding="{Binding Nom}"/>
             </DataGrid.Columns>
         </DataGrid>
         <ScrollBar x:Name="ScrllBarCls" HorizontalAlignment="Left" Margin="783,0,0,0" VerticalAlignment="Top" Height="440" ValueChanged="ScrllBarCls_ValueChanged"/>

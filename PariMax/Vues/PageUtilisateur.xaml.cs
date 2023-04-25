@@ -43,11 +43,13 @@ namespace PariMax.Vues
             Grid_Creation.IsEnabled = true;
             Grid_Creation.Visibility = Visibility.Visible;
             Grid_Basic.Opacity = 0.5;
+            Grid_Basic.IsEnabled = false;
             list.IsEnabled = false;
         }
 
         private void btn_Cancelled_Click(object sender, RoutedEventArgs e)
         {
+            Grid_Basic.IsEnabled = true;
             Grid_Creation.Visibility = Visibility.Hidden;
             Grid_Basic.Opacity = 1;
             list.IsEnabled = true;
