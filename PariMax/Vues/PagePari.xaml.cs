@@ -42,7 +42,7 @@ namespace PariMax.Vues
                 txtbox_ptposs.Text = Convert.ToString((DtG_Maths.SelectedItem as Pari).Point);
                 
             }
-            if (DtG_Maths.SelectedItem != null)
+          /*  if (DtG_Maths.SelectedItem != null)
             {
                 (DtG_Maths.SelectedItem as Pari).Libelle = tbx_NomEquipe.Text;
                 (DtG_Maths.SelectedItem as Pari).DteFin = Convert.ToDateTime(Tbx_Date.Text);
@@ -50,7 +50,7 @@ namespace PariMax.Vues
                 MessageBox.Show("Modifications apportée");
 
                 DtG_Maths.Items.Refresh();
-            }
+            }*/
         }
 
         private void Btn_Crea_Click(object sender, RoutedEventArgs e)
