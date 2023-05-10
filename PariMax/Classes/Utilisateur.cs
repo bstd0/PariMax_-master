@@ -10,7 +10,7 @@ namespace PariMax.Classes
     {
         private int id;
         private string pseudo;
-        private bool mdp;
+        private string mdp;
         private string nom;
         private string prenom;
         private bool isJoueur;
@@ -18,7 +18,7 @@ namespace PariMax.Classes
         private Promotion promotion;
         private List<Utilisateur> utilisateur;
 
-        public Utilisateur(string pseudo, bool mdp, string nom, string prenom, bool isJoueur, int point)
+        public Utilisateur(string pseudo, string mdp, string nom, string prenom, bool isJoueur, int point)
         {
             Pseudo = pseudo;
             Mdp = mdp;
@@ -28,9 +28,18 @@ namespace PariMax.Classes
             Point = point;
         }
 
+        public Utilisateur()
+        {
+            this.Prenom = "";
+            this.Nom = "";
+            this.Mdp = "";
+            this.IsJoueur = true;
+            this.Point = 0;
+        }
+
         public int Id { get => id; set => id = value; }
         public string Pseudo { get => pseudo; set => pseudo = value; }
-        public bool Mdp { get => mdp; set => mdp = value; }
+        public string Mdp { get => mdp; set => mdp = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public bool IsJoueur { get => isJoueur; set => isJoueur = value; }

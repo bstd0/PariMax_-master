@@ -25,10 +25,6 @@ namespace PariMax.Vues
         public PageUtilisateur()
         {
             InitializeComponent();
-            Utilisateur a = new Utilisateur("STD", true, "Santander", "Baptiste", true, 0);
-            Utilisateur b = new Utilisateur("cest", true, "un", "test", true, 0);
-            Liste.Add(a);
-            Liste.Add(b);
             list.ItemsSource = Liste;
             list.Items.Refresh();
         }

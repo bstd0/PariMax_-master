@@ -79,9 +79,8 @@ namespace PariMax.Vues
             Liste.Add(z);
             DtG_Maths.ItemsSource = Liste;
             DtG_Maths.Items.Refresh();
-
-                
-           // (DtG_Maths.SelectedItem as Pari).Libelle = equipe;
+    
+            //(DtG_Maths.SelectedItem as Pari).Libelle = equipe;
             //(DtG_Maths.SelectedItem as Pari).DteFin = date;
             DtG_Maths.Items.Refresh();
             Grid_Creation.Visibility = Visibility.Hidden;

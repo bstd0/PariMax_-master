@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PariMax.Modeles
 {
-    class Ado
+    public class Ado
     {
         public static SqlConnection database;
         public static void OuvrirConnexion()
         {
-            database = new SqlConnection(@" Data Source = 172.20.7.54; Initial Catalog = bd_pari_max; User ID = user_pari_max;database=bd_pari_max;password=pwd_pari_max");
+            database = new SqlConnection(@" Data Source = 172.20.7.41; Initial Catalog = bd_pari_max; User ID = user_pari_max; database=bd_pari_max; password=slampwd1!");
             database.Open();
         }
 
@@ -23,24 +23,14 @@ namespace PariMax.Modeles
 
         public static void insert()
         {
-            open();
+            OuvrirConnexion();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO TableName (FirstColumn) VALUES (@1)");
             cmd.Connection = database;
             cmd.Parameters.Add(new SqlParameter("1", 10));
             cmd.ExecuteNonQuery();
 
-            close();
-        }
-
-        private static void close()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void open()
-        {
-            throw new NotImplementedException();
+            FermerConnexion();
         }
     }
 }
