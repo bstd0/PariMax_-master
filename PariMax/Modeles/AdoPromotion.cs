@@ -1,4 +1,4 @@
-﻿/*using PariMax.Classes;
+﻿using PariMax.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.DirectoryServices;
 using System.Windows;
+using System.Data.SqlClient;
 
 namespace PariMax.Modeles
 {
@@ -31,17 +32,17 @@ namespace PariMax.Modeles
 
         }
 
-        public static List<Promotion> GetAll()
+        public static List<Promotion> AjoutPromotion()
         {
             List<Promotion> promotions = new List<Promotion>();
             Ado.OuvrirConnexion();
             SqlCommand command = new SqlCommand("SELECT * FROM promotions");
-            command.Connection = ;
+            command.Connection = database;
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                promotions.Add(new Promotion(Convert.ToInt32(reader["id"]), Convert.ToString(reader["name"])));
+                promotions.Add(new Promotion(Convert.ToString(reader["libelle"]), Convert.ToInt32(reader["code"])));
             }
 
             reader.Close();
@@ -51,8 +52,7 @@ namespace PariMax.Modeles
         }
         public static void AddPromotion(Promotion promotion)
         {
-            FenetrePrincipal.cl.Add(promotion);
+            Vues.FenetrePrincipale.cl.Add(promotion);
         }
     }
 }
-*/

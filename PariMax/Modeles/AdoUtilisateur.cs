@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using PariMax.Classes;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -19,7 +19,7 @@ namespace PariMax.Modeles
 
         public static List<Utilisateur> AjoutUtilisateur()
         {
-            //List<Promotion> promotions = AdoUtilisateur.AjoutUtilisateur();
+            List<Promotion> promotions = AdoPromotion.AjoutPromotion();
             List<Utilisateur> utilisateurs = new List<Utilisateur>();
             Ado.OuvrirConnexion();
             SqlCommand command = new SqlCommand("SELECT * FROM utilisateurs");
@@ -29,10 +29,9 @@ namespace PariMax.Modeles
             while (reader.Read())
             {
                 int id = Convert.ToInt32(reader["idpromotion"]);
-                /*foreach (Promotion promotion in promotions)
                    
                 Promotion p = PariMax.Vues.FenetrePrincipale.cl.Where(c => c.Id == id).First();
-                Utilisateur user = new Utilisateur(Convert.ToString(reader["nom"]), Convert.ToString(reader["prenom"]), Convert.ToString(reader["pseudo"]), Convert.ToInt32(reader["isJoueur"]));
+                Utilisateur user = new Utilisateur(Convert.ToString(reader["pseudo"]), Convert.ToString(reader["nom"]), Convert.ToString(reader["prenom"]), Convert.ToBoolean(reader["isJoueur"]));
                 if (reader["point"] != null || reader["point"] != DBNull.Value)
                 {
                     user.Point = Convert.ToInt32(reader["points"]);
@@ -49,4 +48,3 @@ namespace PariMax.Modeles
 
     }
 }
-*/
